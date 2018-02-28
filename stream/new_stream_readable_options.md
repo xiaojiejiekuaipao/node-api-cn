@@ -10,20 +10,6 @@
 
 ```js
 const { Readable } = require('stream');
-
-class MyReadable extends Readable {
-  constructor(options) {
-    // Calls the stream.Readable(options) constructor
-    super(options);
-    // ...
-  }
-}
-```
-
-或者使用ES6语法:
-
-```js
-const { Readable } = require('stream');
 const util = require('util');
 
 function MyReadable(options) {
@@ -32,6 +18,20 @@ function MyReadable(options) {
   Readable.call(this, options);
 }
 util.inherits(MyReadable, Readable);
+```
+
+或者使用ES6语法:
+
+```js
+const { Readable } = require('stream');
+
+class MyReadable extends Readable {
+  constructor(options) {
+    // Calls the stream.Readable(options) constructor
+    super(options);
+    // ...
+  }
+}
 ```
 
 或者使用简化的构造方法：
